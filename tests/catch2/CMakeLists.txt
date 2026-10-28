@@ -1,5 +1,5 @@
 # Catch2 tests
-set(CONSTEST_CATCH2_VERSION "3.12.0" CACHE STRING "Version of Catch2 to use")
+set(CONSTEST_CATCH2_VERSION "3.15.0" CACHE STRING "Version of Catch2 to use")
 CPMAddPackage("gh:catchorg/Catch2@${CONSTEST_CATCH2_VERSION}")
 
 
