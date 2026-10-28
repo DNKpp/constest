@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <catch2/catch_test_macros.hpp>
+#include <catch2/matchers/catch_matchers_container_properties.hpp>
 #include <constest.hpp>
 #include <numeric>
 #include <string>
@@ -379,5 +380,14 @@ TEST_CASE("Catch2 non-transient complex containers", "[catch2][complex]")
         CONSTEXPR_CHECK(v1[3] == 4);
         CONSTEXPR_CHECK(v1[5] == 6);
         CONSTEXPR_REQUIRE_FALSE(v1.empty());
+    };
+}
+
+TEST_CASE("Catch2 CONSTEXPR_REQUIRE_THAT tests", "[catch2][require_that]")
+{
+    CONSTEXPR_SECTION("Some range matchers")
+    {
+        CONSTEXPR_REQUIRE_THAT(std::vector<int>{}, Catch::Matchers::IsEmpty());
+        CONSTEXPR_REQUIRE_THAT(std::vector<int>{ 1337 }, !Catch::Matchers::IsEmpty());
     };
 }
