@@ -391,3 +391,12 @@ TEST_CASE("Catch2 CONSTEXPR_REQUIRE_THAT tests", "[catch2][require_that]")
         CONSTEXPR_REQUIRE_THAT(std::vector<int>{ 1337 }, !Catch::Matchers::IsEmpty());
     };
 }
+
+TEST_CASE("Catch2 CONSTEXPR_CHECK_THAT tests", "[catch2][check_that]")
+{
+    CONSTEXPR_SECTION("Some range matchers")
+    {
+        CONSTEXPR_CHECK_THAT(std::vector<int>{}, Catch::Matchers::IsEmpty());
+        CONSTEXPR_CHECK_THAT(std::vector<int>{ 1337 }, !Catch::Matchers::IsEmpty());
+    };
+}

@@ -37,4 +37,9 @@ TEST_CASE("assert_failed")
     {
         CONSTEXPR_REQUIRE_THAT(std::vector<int>{}, !Catch::Matchers::IsEmpty());  // Should fail here
     };
+
+    CONSTEXPR_SECTION("CONSTEXPR_CHECK_THAT")
+    {
+        CONSTEXPR_CHECK_THAT(std::vector<int>{}, !Catch::Matchers::IsEmpty());  // Should fail here
+    };
 }
